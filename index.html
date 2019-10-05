@@ -81,16 +81,28 @@
 
 <!-- Game Engine: Dependencies -->
 <script src="assets/tilesets.js"></script>
+<script src="engine/assets.js"></script>
 
 <!-- Game Engine: ECS -->
 <script src="engine/game.js"></script>
+<script src="engine/entity.js"></script>
+<script src="engine/components.js"></script>
 
 <!-- Input Controls -->
+<script src="engine/input.js"></script>
 
 <!-- Game Engine: Component Assemblies -->
+<script src="engine/characters.js"></script>
 
 <!-- Run The Game -->
 <script>
+  const assets = new Assets()
+  assets.add([
+    'assets/player.png',
+    'assets/sandwater.png',
+    'assets/skeleton.png'  
+  ])
+
   const game = new Game({
     stage: document.getElementById('stage'),
     music: document.getElementById('audio-music'),
